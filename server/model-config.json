@@ -1,0 +1,50 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "localDB"
+  },
+  "AccessToken": {
+    "dataSource": "localDB",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "localDB",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "localDB",
+    "public": false
+  },
+  "keyspace": {
+    "dataSource": "localDB",
+    "public": true
+  },
+  "table": {
+    "dataSource": "localDB",
+    "public": true
+  },
+  "user": {
+    "dataSource": "localDB",
+    "public": true
+  }
+}

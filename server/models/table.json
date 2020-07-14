@@ -1,0 +1,38 @@
+{
+  "name": "table",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "ip": {
+      "type": "string",
+      "required": true
+    },
+    "port": {
+      "type": "number",
+      "required": true
+    },
+    "keyspaceName": {
+      "type": "number",
+      "required": true
+    },
+    "tableName": {
+      "type": "string",
+      "required": true
+    },
+    "tableSchema": {
+      "type": "string",
+      "required": true
+    },
+    "table_properties": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,213 @@
+{
+  "initial:before": {
+    "loopback#favicon": {}
+  },
+  "initial": {
+    "loopback-context#per-request": {},
+    "compression": {},
+    "cors": {
+      "params": {
+        "origin": true,
+        "credentials": true,
+        "maxAge": 86400
+      }
+    },
+    "helmet#xssFilter": {},
+    "helmet#frameguard": {
+      "params": [
+        "deny"
+      ]
+    },
+    "helmet#hsts": {
+      "params": {
+        "maxAge": 0,
+        "includeSubdomains": true
+      }
+    },
+    "helmet#hidePoweredBy": {},
+    "helmet#ieNoOpen": {},
+    "helmet#noSniff": {},
+    "helmet#noCache": {
+      "enabled": false
+    }
+  },
+  "session": {},
+  "auth": {},
+  "parse": {
+    "body-parser#json": {},
+    "body-parser#urlencoded": {
+      "params": {
+        "extended": true
+      }
+    },
+    "./middleware/getInstacesMiddleware/getInstancesAccessTokenValidation": {
+      "methods": "POST",
+      "paths": "/api/keyspaces/:keyspaceName/tables/getInstances"
+    },
+    "./middleware/getInstacesMiddleware/getInstancesKeyspaceConfigurationPropertiesPresence": {
+      "methods": "POST",
+      "paths": "/api/keyspaces/:keyspaceName/tables/getInstances"
+    },
+    "./middleware/getInstacesMiddleware/getInstancesKeyspaceConfigurationPropertiesValidation": {
+      "methods": "POST",
+      "paths": "/api/keyspaces/:keyspaceName/tables/getInstances"
+    },
+    "./middleware/getInstacesMiddleware/getInstancesKeyspacePresence": {
+      "methods": "POST",
+      "paths": "/api/keyspaces/:keyspaceName/tables/getInstances"
+    },
+
+    "./middleware/dropMiddleware/dropAccessTokenValidation": {
+      "methods": "DELETE",
+      "paths": "/api/keyspaces/:keyspaceName/tables/drop"
+    },
+    "./middleware/dropMiddleware/dropKeyspaceConfigurationPropertiesPresence": {
+      "methods": "DELETE",
+      "paths": "/api/keyspaces/:keyspaceName/tables/drop"
+    },
+    "./middleware/dropMiddleware/dropKeyspaceConfigurationPropertiesValidation": {
+      "methods": "DELETE",
+      "paths": "/api/keyspaces/:keyspaceName/tables/drop"
+    },
+    "./middleware/dropMiddleware/dropKeyspacePresence": {
+      "methods": "DELETE",
+      "paths": "/api/keyspaces/:keyspaceName/tables/drop"
+    },
+    "./middleware/dropMiddleware/dropTablePresence": {
+      "methods": "DELETE",
+      "paths": "/api/keyspaces/:keyspaceName/tables/drop"
+    },
+
+
+    "./middleware/alterAddMiddleware/alterAddAccessTokenValidation": {
+      "methods": "POST",
+      "paths": "/api/keyspaces/:keyspaceName/tables/addColumns"
+    },
+    "./middleware/alterAddMiddleware/alterAddTablesPropertiesPresence": {
+      "methods": "POST",
+      "paths": "/api/keyspaces/:keyspaceName/tables/addColumns"
+    },
+    "./middleware/alterAddMiddleware/alterAddTablesPropertiesValidation": {
+      "methods": "POST",
+      "paths": "/api/keyspaces/:keyspaceName/tables/addColumns"
+    },
+    "./middleware/alterAddMiddleware/alterAddKeyspacePresence": {
+      "methods": "POST",
+      "paths": "/api/keyspaces/:keyspaceName/tables/addColumns"
+    },
+    "./middleware/alterAddMiddleware/alterAddTablePresence": {
+      "methods": "POST",
+      "paths": "/api/keyspaces/:keyspaceName/tables/addColumns"
+    },
+  
+
+    "./middleware/alterDropMiddleware/alterDropAccessTokenValidation": {
+      "methods": "DELETE",
+      "paths": "/api/keyspaces/:keyspaceName/tables/dropColumns"
+    },
+    "./middleware/alterDropMiddleware/alterDropTablesPropertiesPresence": {
+      "methods": "DELETE",
+      "paths": "/api/keyspaces/:keyspaceName/tables/dropColumns"
+    },
+    "./middleware/alterDropMiddleware/alterDropTablesPropertiesValidation": {
+      "methods": "DELETE",
+      "paths": "/api/keyspaces/:keyspaceName/tables/dropColumns"
+    },
+    "./middleware/alterDropMiddleware/alterDropKeyspacePresence": {
+      "methods": "DELETE",
+      "paths": "/api/keyspaces/:keyspaceName/tables/dropColumns"
+    },
+    "./middleware/alterDropMiddleware/alterDropTablePresence": {
+      "methods": "DELETE",
+      "paths": "/api/keyspaces/:keyspaceName/tables/dropColumns"
+    },
+
+  
+    "./middleware/createMiddleware/createAccessTokenValidation": {
+      "methods": "POST",
+      "paths": "/api/keyspaces/:keyspaceName/tables/create"
+    },
+    "./middleware/createMiddleware/createTablesPropertiesPresence": {
+      "methods": "POST",
+      "paths": "/api/keyspaces/:keyspaceName/tables/create"
+    },
+    "./middleware/createMiddleware/createTablesPropertiesPresenceValidation": {
+      "methods": "POST",
+      "paths": "/api/keyspaces/:keyspaceName/tables/create"
+    },
+    "./middleware/createMiddleware/createTableKeyspacePresence": {
+      "methods": "POST",
+      "paths": "/api/keyspaces/:keyspaceName/tables/create"
+    },
+    "./middleware/createMiddleware/createTableTablePresence": {
+      "methods": "POST",
+      "paths": "/api/keyspaces/:keyspaceName/tables/create"
+    },
+
+
+    "./middleware/createKeyspaceMiddleware/createKeyspaceAccessTokenValidation": {
+      "methods": "POST",
+      "paths": "/api/keyspaces/:keyspaceName/createKeyspace"
+    },
+    "./middleware/createKeyspaceMiddleware/createKeyspaceKeyspaceConfigurationPropertiesValidation": {
+      "methods": "POST",
+      "paths": "/api/keyspaces/:keyspaceName/createKeyspace"
+    },
+    "./middleware/createKeyspaceMiddleware/createKeyspaceKeyspacePresence": {
+      "methods": "POST",
+      "paths": "/api/keyspaces/:keyspaceName/createKeyspace"
+    },
+
+    "./middleware/dropKeyspaceMiddleware/dropKeyspaceAccessTokenValidation": {
+      "methods": "POST",
+      "paths": "/api/keyspaces/:keyspaceName/dropKeyspace"
+    },
+    "./middleware/dropKeyspaceMiddleware/dropKeyspaceKeyspaceConfigurationPropertiesPresence": {
+      "methods": "POST",
+      "paths": "/api/keyspaces/:keyspaceName/dropKeyspace"
+    },
+    "./middleware/dropKeyspaceMiddleware/dropKeyspaceKeyspaceConfigurationPropertiesValidation": {
+      "methods": "POST",
+      "paths": "/api/keyspaces/:keyspaceName/dropKeyspace"
+    },
+    "./middleware/dropKeyspaceMiddleware/dropKeyspaceKeyspacePresence": {
+      "methods": "POST",
+      "paths": "/api/keyspaces/:keyspaceName/dropKeyspace"
+    },
+
+    "./middleware/getRecordsMiddleware/getRecordsTablesPropertiesPresence": {
+      "methods": "POST",
+      "paths": "/api/keyspaces/:keyspaceName/getRecords"
+    },
+    "./middleware/getRecordsMiddleware/getRecordsTablesPropertiesValidation": {
+      "methods": "POST",
+      "paths": "/api/keyspaces/:keyspaceName/getRecords"
+    },
+    "./middleware/getRecordsMiddleware/getRecordsKeyspacePresence": {
+      "methods": "POST",
+      "paths": "/api/keyspaces/:keyspaceName/getRecords"
+    },
+    "./middleware/getRecordsMiddleware/getRecordsTablePresence": {
+      "methods": "POST",
+      "paths": "/api/keyspaces/:keyspaceName/getRecords"
+    }
+
+
+
+
+  },
+  "routes": {
+    "loopback#rest": {
+      "paths": [
+        "${restApiRoot}"
+      ]
+    }
+  },
+  "files": {},
+  "final": {
+    "loopback#urlNotFound": {}
+  },
+  "final:after": {
+    "strong-error-handler": {}
+  }
+}
