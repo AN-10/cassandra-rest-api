@@ -3,10 +3,6 @@
  */
 'use strict';
 
-
-
-
-
 var methods = {
   /*
    * It will return an object containing the property missing error messages
@@ -123,6 +119,5 @@ function removeWhiteSpacesFromSides(value) {
 function removeWhiteSpacesFromInside(value) {
   return value.replace(/ /g, "")
 }
-
 
 module.exports = methods;
